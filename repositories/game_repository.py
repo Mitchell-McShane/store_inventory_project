@@ -43,3 +43,15 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM games"
     run_sql(sql)
+
+# DELETE single id
+def delete(id):
+    sql = "DELETE FROM games WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+# UPDATE 
+def update(game):
+    sql = "UPDATE games SET (name, worker_id, genre, price, buying_cost, stock, studio_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [game.name, game.worker.id, game.genre, game.price, game.buying_cost, game.stock, game.studio.id]
+    run_sql(sql, values) 

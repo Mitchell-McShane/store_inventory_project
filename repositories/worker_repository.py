@@ -37,3 +37,16 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM workers"
     run_sql(sql)
+
+# UPDATE
+def games_by_worker(worker):
+    games = []
+
+    sql = "SELECT * FROM games WHERE worker_id = %s"
+    values = [worker.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        game = Game(row['name'], worker, row['genre'], row['price'],row['buying_cost'], row['stock'], row['studio_id'], row['id'])
+        games.append(game)
+    return games

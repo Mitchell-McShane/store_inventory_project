@@ -37,3 +37,6 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM studios"
     run_sql(sql)
+
+
+# UPDATE

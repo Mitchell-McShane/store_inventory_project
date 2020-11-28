@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for game in all_games %}
+<h1>Games</h1>
+
+<section id="game-list">
+    <p>Game Name: {{ game.name }} </p>
+    <p>Genre: {{ game.genre }} </p>
+    <p>Price: £{{ '%0.2f'| format(game.price) }} </p>
+    <p>Cost Price: £{{ '%0.2f'| format(game.buying_cost) }} </p>
+
+    {% if game.stock >= 3 %}
+    <p>Stock Level = {{ game.stock }}</p>
+    {% elif game.stock == 0 %}
+    <p>Out of Stock </p>
+    {% elif game.stock < 3 %}
+    <p>Stock Level = {{ game.stock }} Low Stock</p>
+    {% endif %}
+
+    <form class="delete-form" action="/games/{{game.id}}/delete" method="POST">
+        <button class="delete-button">DELETE</button>
+    </form>
+    <hr>
+</section>
+{% endfor %}
+
+{% endblock %}
