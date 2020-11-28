@@ -42,4 +42,4 @@ def select(id):
 # DELETE ALL
 def delete_all():
     sql = "DELETE FROM games"
-    run_sql
+    run_sql(sql)
