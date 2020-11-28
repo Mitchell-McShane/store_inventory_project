@@ -55,3 +55,9 @@ def update(game):
     sql = "UPDATE games SET (name, worker_id, genre, price, buying_cost, stock, studio_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [game.name, game.worker.id, game.genre, game.price, game.buying_cost, game.stock, game.studio.id]
     run_sql(sql, values) 
+
+# UPDATE STOCK
+def game_stock_change(game):
+    sql = "UPDATE game SET (game.stock) = (%s) WHERE id = %s"
+    values = [game.stock]
+    run_sql(sql, values)

@@ -9,14 +9,15 @@
     <p>Game Name: {{ game.name }} </p>
     <p>Genre: {{ game.genre }} </p>
     <p>Price: £{{ '%0.2f'| format(game.price) }} </p>
-    <p>Cost Price: £{{ '%0.2f'| format(game.buying_cost) }} </p>
+    <p>Buying Cost: £{{ '%0.2f'| format(game.buying_cost) }} </p>
+    <p>Studio: {{game.studio.name}}</p>
 
     {% if game.stock >= 3 %}
-    <p>Stock Level = {{ game.stock }}</p>
+    <p>Stock = {{ game.stock }}</p>
     {% elif game.stock == 0 %}
     <p>Out of Stock </p>
     {% elif game.stock < 3 %}
-    <p>Stock Level = {{ game.stock }} Low Stock</p>
+    <p>Stock = {{ game.stock }} Low Stock</p>
     {% endif %}
 
     <form class="delete-form" action="/games/{{game.id}}/delete" method="POST">
