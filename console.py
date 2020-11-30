@@ -51,7 +51,7 @@ ac = Game("Animal Crossing: New Horizons", worker_3, "Life Simulation", 39.99, 3
 game_repository.save(ac)
 
 # PC games
-wow = Game("World of Warcraft: Shadowlands Collectors Edition", worker_2, "Massive Multiplayer Online role-playing game", 169.99, 149.99, 0, blizzard)
+wow = Game("World of Warcraft: Shadowlands CE", worker_2, "MMORPG", 169.99, 149.99, 0, blizzard)
 game_repository.save(wow)
 
 pdb.set_trace()

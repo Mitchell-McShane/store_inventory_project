@@ -40,3 +40,14 @@ def delete_all():
 
 
 # UPDATE
+def games_by_studio(studio):
+    games = []
+
+    sql = "SELECT * FROM games WHERE studio_id = %s"
+    values = [studio.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        game = Game(row['name'], row['genre'], row['price'],row['buying_cost'], row['stock'], row['studio_id'], row['id'])
+        games.append(game)
+    return games

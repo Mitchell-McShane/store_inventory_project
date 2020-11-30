@@ -19,6 +19,7 @@
     {% elif game.stock < 3 %}
     <p>Stock = {{ game.stock }} Low Stock</p>
     {% endif %}
+    <a href="/games/{{game.id}}">View More Info</a>
 
     <form class="delete-form" action="/games/{{game.id}}/delete" method="POST">
         <button class="delete-button">DELETE</button>

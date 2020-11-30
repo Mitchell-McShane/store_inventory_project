@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+This is going to be the list of workers that work here
+
+{% for worker in all_workers %}
+<p>Worker Name: {{worker.name}}</p>
+<p>Worker Age: {{worker.age}}</p>
+<p>Worker Date of Birth: {{worker.dob}}</p>
+{% endfor %}
+
+{% endblock %}

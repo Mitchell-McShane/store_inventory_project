@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/games/{{game.id}}" methods="POST">
+    <div>
+        <input type="text"
+                id="name"
+                name="name"
+                value="{{game.name}}"
+                required>
+    </div>
+
+    <div>
+        <input type="number"
+        step="0.01"
+        name="price"
+        id="price"
+        value="{{game.price}}"
+        required>
+    </div>
+
+    <div>
+        <input type="number"
+        step="0.01"
+        name="buying_cost"
+        id="buying_cost"
+        value="{{game.buying_cost}}"
+        required>
+    </div>
+
+    <div>
+        <select name="studio" id="studio_id">
+            {% for studio in studio %}
+                <option value="{{studio.id}}"
+            {% if game.studio.id == studio.id %} selected="selected"{% endif %}>
+                {{studio.name}}
+                </option>
+                {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <input type="text"
+        name="genre"
+        id= "genre"
+        value="{{game.genre}}"
+        required>
+    </div>
+
+    <div>
+        <select name="worker" id="worker_id">
+            {% for worker in worker %}
+                <option value="{{worker.id}}"
+            {% if game.worker.id == worker.id %} selected="selected"{% endif %}>
+                {{worker.name}}
+                </option>
+                {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <input type="number"
+        name="stock"
+        id="stock"
+        min="1"
+        step="1"
+        value="{{game.stock}}"
+        required>
+    </div>
+
+    <button class="submit-button" type="submit">Save Changes</button>
+</form>
+{% endblock %}
