@@ -1,0 +1,21 @@
+.add-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: solid;
+    width: 30%;
+    transition: 0.3s;
+    padding: 10px 15px;
+    margin: 10px;
+}
+
+.buttons-edit-delete {
+    display: flex;
+  }
+
+.submit-button {
+    margin: 10px;
+}
+      
+button:hover {
+    opacity: 1;
+}
