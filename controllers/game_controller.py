@@ -18,7 +18,25 @@ def games():
 @games_blueprint.route("/games/new", methods=['GET'])
 def new_game():
     games = game_repository.select_all()
-    return render_template("games/new.html", games=games)
+    studios = studio_repository.select_all()
+    workers = worker_repository.select_all()
+    return render_template("games/new.html", games=games, studios=studios, workers=workers)
+
+# CREATE
+# POST '/games
+@games_blueprint.route("/games", methods=['POST'])
+def create_game():
+    print(request.form)
+    name = request.form['name']
+    worker = worker_repository.select(request.form["worker_id"])
+    genre = request.form['genre']
+    price = request.form['price']
+    buying_cost = request.form['buying_cost']
+    stock = request.form['stock']
+    studio = studio_repository.select(request.form["studio_id"])
+    game = Game(name, worker, genre, price, buying_cost, stock, studio)
+    game_repository.save(game)
+    return redirect("/games")
 
 
 # Show games info
