@@ -2,8 +2,9 @@
 
 {% block content %}
 
-<form action="/games/{{game.id}}" methods="POST">
+<form action="/games/{{game.id}}" method="POST">
     <div>
+        <label for="name">Name</label>
         <input type="text"
                 id="name"
                 name="name"
@@ -12,6 +13,7 @@
     </div>
 
     <div>
+        <label for="price">Price</label>
         <input type="number"
         step="0.01"
         name="price"
@@ -21,6 +23,7 @@
     </div>
 
     <div>
+        <label for="buying_cost">Buying Cost</label>
         <input type="number"
         step="0.01"
         name="buying_cost"
@@ -30,7 +33,8 @@
     </div>
 
     <div>
-        <select name="studio" id="studio_id">
+        <label for="studio_id">Studio</label>
+        <select name="studio_id" id="studio_id">
             {% for studio in studio %}
                 <option value="{{studio.id}}"
             {% if game.studio.id == studio.id %} selected="selected"{% endif %}>
@@ -41,6 +45,7 @@
     </div>
 
     <div>
+        <label for="genre">Genre</label>
         <input type="text"
         name="genre"
         id= "genre"
@@ -49,7 +54,8 @@
     </div>
 
     <div>
-        <select name="worker" id="worker_id">
+        <label for="worker_id">Sold by</label>
+        <select name="worker_id" id="worker_id">
             {% for worker in worker %}
                 <option value="{{worker.id}}"
             {% if game.worker.id == worker.id %} selected="selected"{% endif %}>
@@ -60,6 +66,7 @@
     </div>
 
     <div>
+        <label for="stock">Stock</label>
         <input type="number"
         name="stock"
         id="stock"

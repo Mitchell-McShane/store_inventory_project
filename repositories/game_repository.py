@@ -53,7 +53,7 @@ def delete(id):
 # UPDATE 
 def update(game):
     sql = "UPDATE games SET (name, worker_id, genre, price, buying_cost, stock, studio_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [game.name, game.worker.id, game.genre, game.price, game.buying_cost, game.stock, game.studio.id]
+    values = [game.name, game.worker.id, game.genre, game.price, game.buying_cost, game.stock, game.studio.id, game.id]
     run_sql(sql, values) 
 
 # UPDATE STOCK

@@ -13,6 +13,13 @@ def games():
     games = game_repository.select_all()
     return render_template("games/index.html", all_games=games)
 
+# NEW
+# GET '/games/new
+@games_blueprint.route("/games/new", methods=['GET'])
+def new_game():
+    games = game_repository.select_all()
+    return render_template("games/new.html", games=games)
+
 
 # Show games info
 @games_blueprint.route("/games/<id>")
@@ -40,7 +47,8 @@ def update_game(id):
     buying_cost = request.form["buying_cost"]
     stock = request.form["stock"]
     studio = studio_repository.select(request.form["studio_id"])
-    game = Game(name, worker, genre, price, buying_cost, stock, studio)
+    game = Game(name, worker, genre, price, buying_cost, stock, studio, id)
+    print(game)
     game_repository.update(game)
     return redirect("/games")
 
