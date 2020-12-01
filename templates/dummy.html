@@ -103,3 +103,84 @@
     <button class="add-button" type="submit">Add Game</button>
 
 </form> -->
+
+
+
+
+
+
+    <!-- <div>
+        <label for="name">Name</label>
+        <input type="text"
+                id="name"
+                name="name"
+                value="{{game.name}}"
+                required>
+    </div>
+
+    <div>
+        <label for="price">Price</label>
+        <input type="number"
+        step="0.01"
+        name="price"
+        id="price"
+        value="{{game.price}}"
+        required>
+    </div>
+
+    <div>
+        <label for="buying_cost">Buying Cost</label>
+        <input type="number"
+        step="0.01"
+        name="buying_cost"
+        id="buying_cost"
+        value="{{game.buying_cost}}"
+        required>
+    </div>
+
+    <div>
+        <label for="studio_id">Studio</label>
+        <select name="studio_id" id="studio_id">
+            {% for studio in studio %}
+                <option value="{{studio.id}}"
+            {% if game.studio.id == studio.id %} selected="selected"{% endif %}>
+                {{studio.name}}
+                </option>
+                {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="genre">Genre</label>
+        <input type="text"
+        name="genre"
+        id= "genre"
+        value="{{game.genre}}"
+        required>
+    </div>
+
+    <div>
+        <label for="worker_id">Sold by</label>
+        <select name="worker_id" id="worker_id">
+            {% for worker in worker %}
+                <option value="{{worker.id}}"
+            {% if game.worker.id == worker.id %} selected="selected"{% endif %}>
+                {{worker.name}}
+                </option>
+                {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="stock">Stock</label>
+        <input type="number"
+        name="stock"
+        id="stock"
+        min="1"
+        step="1"
+        value="{{game.stock}}"
+        required>
+    </div>
+
+    <button class="submit-button" type="submit">Save Changes</button>
+</form>
