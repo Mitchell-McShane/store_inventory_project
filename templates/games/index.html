@@ -4,7 +4,7 @@
 <a class="add-game" href="/games/new">Add New Game to Stock List</a>
 
 {% for game in all_games %}
-<h1>Games</h1>
+
 <hr>
 
 <div class="game-content">
@@ -38,7 +38,7 @@
         <tbody>
     </table>
 </div>
-<a href="/games/{{game.id}}">View More Info</a>
+<a class="vied-id" href="/games/{{game.id}}">View More Info</a>
 <form class="delete-form" action="/games/{{game.id}}/delete" method="POST">
     <button class="delete-button">DELETE</button>
 </form>
