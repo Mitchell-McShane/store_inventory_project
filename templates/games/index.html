@@ -7,27 +7,42 @@
 <h1>Games</h1>
 <hr>
 
-<section id="game-list">
-    <p>Game Name: {{ game.name }} </p>
-    <p>Genre: {{ game.genre }} </p>
-    <p>Price: £{{ '%0.2f'| format(game.price) }} </p>
-    <p>Buying Cost: £{{ '%0.2f'| format(game.buying_cost) }} </p>
-    <p>Studio: {{game.studio.name}}</p>
+<div class="game-content">
+    <table class="gl-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>Buying Cost</th>
+            <th>Studio</th>
+            <th>Stock</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td> {{ game.name }} </td>
+            <td>{{ game.genre }}</td>
+            <td>£{{ '%0.2f'| format(game.price) }}</td>
+            <td>£{{ '%0.2f'| format(game.buying_cost) }}</td>
+            <td>{{ game.studio.name }}</td>
+        {% if game.stock >= 3 %}
+            <td>{{ game.stock }}</td>
+        {% elif game.stock == 0 %}
+            <td>Out of Stock </td>
+        {% elif game.stock < 3 %}
+            <td>Low Stock</td>
+        {% endif %}
+        </tr>
 
-    {% if game.stock >= 3 %}
-    <p>Stock = {{ game.stock }}</p>
-    {% elif game.stock == 0 %}
-    <p>Out of Stock </p>
-    {% elif game.stock < 3 %}
-    <p>Stock = {{ game.stock }} Low Stock</p>
-    {% endif %}
-    <a href="/games/{{game.id}}">View More Info</a>
+        <tbody>
+    </table>
+</div>
+<a href="/games/{{game.id}}">View More Info</a>
+<form class="delete-form" action="/games/{{game.id}}/delete" method="POST">
+    <button class="delete-button">DELETE</button>
+</form>
 
-    <form class="delete-form" action="/games/{{game.id}}/delete" method="POST">
-        <button class="delete-button">DELETE</button>
-    </form>
-    <hr>
-</section>
 {% endfor %}
 
 {% endblock %}

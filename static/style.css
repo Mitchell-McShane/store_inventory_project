@@ -13,7 +13,20 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     margin: 10px;
-  }
+}
+
+.add-game:link, .add-game:visited {
+    background-color: hsl(7, 5%, 32%);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+  
+.add-game:hover, .add-game:active {
+    background-color: rgb(97, 94, 94);
+}
 
 .game-list {
     font-family: Arial, Helvetica, sans-serif;
@@ -101,6 +114,13 @@ td {
     padding: 10px;
 }
 
+.staff1 {
+    text-align: center;
+    color: white;
+    background-color: grey;
+    border: 4mm ridge;
+}
+
 .workers {
     margin-left: auto;
     margin-right: auto;
@@ -124,11 +144,4 @@ td {
     background-color: gray;
     color: white;
     justify-content: center;
-}
-
-.staff1 {
-    text-align: center;
-    color: white;
-    background-color: grey;
-    border: 4mm ridge;
 }
