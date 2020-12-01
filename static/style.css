@@ -15,19 +15,6 @@ body {
     margin: 10px;
 }
 
-.add-game:link, .add-game:visited {
-    background-color: hsl(7, 5%, 32%);
-    color: white;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-  
-.add-game:hover, .add-game:active {
-    background-color: rgb(97, 94, 94);
-}
-
 .game-list {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 28px;

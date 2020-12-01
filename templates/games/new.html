@@ -2,84 +2,92 @@
 
 {% block content %}
 
-<h1 class="game-stock-title">Adding Game Stock</h1>
+<h1 class="game-stock-title">Enter the details of the new stock here</h1>
 
-<form class="form-class" action="/games" method="POST">
-    <div>
-        <label for="name">Name</label>
-        <input type="text"
+<form action="/games" method="POST">
+    <table>
+    <tr>
+        <td>Name :</td>
+        <td><label for="name"></label>
+            <input type="text"
                 id="name"
                 name="name"
                 placeholder="Game Name"
                 required
-                autofocus>
-    </div>
+                autofocus></td>
+    </tr>
 
-    <div>
-        <label for="price">Price</label>
-        <input type="number"
-        step="0.01"
-        name="price"
-        id="price"
-        placeholder="Selling Price"
-        required>
-    </div>
+    <tr>
+        <td>Price :</td> 
+        <td><label for="price"></label>
+            <input type="number" 
+                step="0.01"
+                name="price"
+                id="price"
+                placeholder="Selling Price"
+                required></td>
+    </tr>
 
-    <div>
-        <label for="buying_cost">Buying Cost</label>
-        <input type="number"
-        step="0.01"
-        name="buying_cost"
-        id="buying_cost"
-        placeholder="Buying Cost"
-        required>
-    </div>
+    <tr>
+        <td>Buying Cost :</td> 
+        <td><label for="buying_cost"></label>
+            <input type="number" 
+                step="0.01"
+                name="buying_cost"
+                id="buying_cost"
+                placeholder="Buying Cost"
+                required></td>
+    </tr>
 
-    <div>
-        <label for="studio_id">Studio</label>
-        <select name="studio_id" id="studio_id">
+    <tr>
+    <td>studio :</td> 
+        <td><label for="studio_id"></label>
+            <select name="studio_id" id="studio_id">
             <option value="">Studio List</option>
             {% for studio in studios|sort(attribute="name") %}
                 <option value="{{ studio.id }}">{{ studio.name }}</option>
             {% endfor %}
-        </select>
+        </select></td>
+    </tr>
 
-    </div>
+    <tr>
+    <td>Genre :</td> 
+        <td><label for="genre"></label>
+            <input type="text"
+                id="genre"
+                name="genre"
+                placeholder="Genre"
+                required
+                autofocus></td>
+    </tr>
+       
+    <td>Stock :</td> 
+        <td><label for="stock"></label>
+            <input type="number" 
+                name="stock"
+                id="stock"
+                min="1"
+                value="1"
+                placeholder="Stock Count"
+                required></td>
+    </tr>
 
-    <div>
-        <label for="genre">Genre</label>
-        <input type="text"
-        name="genre"
-        id= "genre"
-        placeholder="Genre"
-        required>
-    </div>
-
-    <div>
-        <label for="stock">Stock</label>
-        <input type="number"
-        name="stock"
-        id="stock"
-        min="1"
-        value="1"
-        step="1"
-        placeholder="Stock Count"
-        required>
-    </div>
-
-    <div>
-        <label for="worker_id">Worker stock check</label>
-        <select name="worker_id" id="worker_id">
-            <option value="">Worker List</option>
-            {% for worker in workers|sort(attribute="name") %}
-                <option value="{{ worker.id }}">{{ worker.name }}</option>
-            {% endfor %}
-        </select>
-
-    </div>
-
+    <tr>
+        <td>Worker :</td> 
+            <td><label for="worker_id"></label>
+                <select name="worker_id" id="worker_id">
+                <option value="">Worker List</option>
+                {% for worker in workers|sort(attribute="name") %}
+                    <option value="{{ worker.id }}">{{ worker.name }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+    </table>
+    <br>
     <button class="add-button" type="submit">Add Game</button>
-
 </form>
-    
+
 {% endblock %}
+
+
+    

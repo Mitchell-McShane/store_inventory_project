@@ -8,9 +8,41 @@
     margin: 10px;
 }
 
+.add-game:link, .add-game:visited {
+    background-color: hsl(7, 5%, 32%);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+  
+.add-game:hover, .add-game:active {
+    background-color: rgb(33, 26, 26);
+}
+
+.view-id {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: solid;
+    width: 30%;
+    transition: 0.3s;
+    padding: 10px 15px;
+    margin: 10px;
+}
+
+.view-id:link, .view-id:visited {
+    background-color: hsl(7, 5%, 32%);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
 .buttons-edit-delete {
     display: flex;
-  }
+}
 
 .submit-button {
     margin: 10px;
