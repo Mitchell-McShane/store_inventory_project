@@ -25,6 +25,21 @@ body {
     border-image: linear-gradient(red, blue) 30;
 }
 
+.game-stock-title {
+    text-align: center;
+    color: white;
+    background-color: rgb(33, 26, 26);
+    border: 2mm ridge;
+}
+
+.form-class {
+    margin: 0;
+    font-size: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f2f2f2;
+}
+
 
 .welcome-to {
     margin: 0;
@@ -87,24 +102,33 @@ td {
 }
 
 .workers {
-    display: flex;
-    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  
+.workers td, .workers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+.workers tr:nth-child(even){
+    background-color: #525252;
+}
+  
+  
+.workers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: gray;
+    color: white;
     justify-content: center;
-    border: #ccc solid;
-    border-image: linear-gradient(red, blue) 30;
-    box-shadow: 10px 5px 5px red;
 }
 
 .staff1 {
     text-align: center;
     color: white;
     background-color: grey;
-    border: 4mm ridge;
-}
-
-.staff2 {
-    text-align: center;
-    color: white;
-    border: black solid;
     border: 4mm ridge;
 }

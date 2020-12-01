@@ -3,28 +3,20 @@
 {% block content %}
 
 <h1 class="staff1">Here is a list of our staff currently working at the company!</h1>
-<h2 class="staff2">Our Staff</h2>
-
 
 {% for worker in all_workers %}
-
-<div class="workers">
-    <table>
+    <table class="workers">
         <tr>
-
-            <td>Name: {{worker.name}}</td>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Date of Birth</th>
         </tr>
         <tr>
-            <td>Age: {{worker.age}}</td>
-        </tr>
-        <tr>
-            <td>Date of Birth: {{worker.dob}}</td>
-        </tr>
+            <td>{{worker.name}}</td>
+            <td>{{worker.age}}</td>
+            <td>{{worker.dob}}</td>
+        </table>   
 
-        
-    </table>
-
-</div>
 {% endfor %}
 
 {% endblock %}
