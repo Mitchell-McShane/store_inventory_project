@@ -1,6 +1,6 @@
 .body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: Arial, Helvetica, sans-serif; font-size: 16px;
     background: url('/static/images/gamebackground.jpg');
     background-color: rgb(43, 36, 77);
@@ -12,7 +12,7 @@ body {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
-    margin: 10px;
+    margin: 0px;
 }
 
 .game-list {
@@ -131,4 +131,13 @@ td {
     background-color: gray;
     color: white;
     justify-content: center;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(65, 60, 60);
+    color: white;
+    text-align: center;
 }
